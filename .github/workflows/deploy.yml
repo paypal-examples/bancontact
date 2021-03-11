@@ -13,7 +13,7 @@ jobs:
       - uses: akhileshns/heroku-deploy@v3.8.9 
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}} 
-          heroku_app_name: demo-bancontact-js-sdk # Must be unique in Heroku
+          heroku_app_name: bancontact-js-sdk # Must be unique in Heroku
           heroku_email: ${{secrets.HEROKU_EMAIL}} 
           usedocker: true
           docker_build_args: |

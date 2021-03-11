@@ -3,7 +3,7 @@
 This integration uses the JavaScript SDK to accept Bancontact payments
 
 
-See a [hosted version](https://demo-bancontact-js-sdk.herokuapp.com/) of the sample
+See a [hosted version](https://bancontact-js-sdk.herokuapp.com/) of the sample
 
 ### How to run locally
 
