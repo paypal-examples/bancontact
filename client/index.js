@@ -79,8 +79,7 @@ paypal
     style,
     fields: {
       name: {
-        value: '',
-        hidden: false,
+        value: ''
       },
     },
   })
