@@ -1,32 +1,6 @@
 /* eslint-disable consistent-return, new-cap, no-alert, no-console */
 
-const style = {
-  base: {
-    backgroundColor: 'white',
-    color: 'black',
-    fontSize: '16px',
-    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
-    lineHeight: '1.4',
-    letterSpacing: '0.3',
-  },
-  input: {
-    backgroundColor: 'white',
-    fontSize: '16px',
-    color: '#333',
-    borderColor: '#dbdbdb',
-    borderRadius: '4px',
-    borderWidth: '1px',
-    padding: '1rem',
-  },
-  invalid: {
-    color: 'red',
-  },
-  active: {
-    color: 'black',
-  },
-}
-
-const order = {
+var order = {
   purchase_units: [
     {
       amount: {
@@ -34,11 +8,7 @@ const order = {
         value: '49.11',
       },
     },
-  ],
-  application_context: {
-    return_url: `${window.location.origin}/success.html`,
-    cancel_url: `${window.location.origin}/cancel.html`,
-  },
+  ]
 }
 
 /* paypal */
@@ -76,7 +46,7 @@ paypal
 paypal
   .Fields({
     fundingSource: paypal.FUNDING.BANCONTACT,
-    style,
+    style: {},
     fields: {
       name: {
         value: ''
@@ -101,13 +71,11 @@ paypal
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data)
           swal("Order Captured!", `Id: ${data.id}, ${Object.keys(data.payment_source)[0]}, ${data.purchase_units[0].payments.captures[0].amount.currency_code} ${data.purchase_units[0].payments.captures[0].amount.value}`, "success");
         })
         .catch(console.error);
     },
     onCancel(data, actions) {
-      console.log(data)
       swal("Order Canceled", `ID: ${data.orderID}`, "warning");
     },
     onError(err) {
@@ -117,6 +85,8 @@ paypal
   .render('#bancontact-btn')
 
 /* radio buttons */
+
+document.getElementById('paypal-btn').style.display = 'none'
 
 // Listen for changes to the radio buttons
 document.querySelectorAll('input[name=payment-option]').forEach(el => {
@@ -142,6 +112,3 @@ document.querySelectorAll('input[name=payment-option]').forEach(el => {
     }
   })
 })
-
-document.getElementById('bancontact-container').style.display = 'none'
-document.getElementById('bancontact-btn').style.display = 'none'
