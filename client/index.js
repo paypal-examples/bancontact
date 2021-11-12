@@ -44,7 +44,7 @@ paypal
   .render('#bancontact-mark')
 
 paypal
-  .Fields({
+  .PaymentFields({
     fundingSource: paypal.FUNDING.BANCONTACT,
     style: {},
     fields: {
@@ -86,7 +86,8 @@ paypal
 
 /* radio buttons */
 
-document.getElementById('paypal-btn').style.display = 'none'
+document.getElementById('bancontact-container').style.display = 'none'
+document.getElementById('bancontact-btn').style.display = 'none'
 
 // Listen for changes to the radio buttons
 document.querySelectorAll('input[name=payment-option]').forEach(el => {

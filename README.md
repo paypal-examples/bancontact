@@ -1,4 +1,9 @@
-# Paying with Bancontact
+# Paying with Bancontact or Paypal on the web
+
+<p>
+<img src="https://www.paypalobjects.com/images/checkout/latinum/Altpay_logo_bancontact.svg" alt="Bancontact Logo">
+<img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" width="90px" alt="Paypal Logo">
+</p>
 
 This integration uses the JavaScript SDK to accept Bancontact payments
 
