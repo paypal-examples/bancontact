@@ -46,7 +46,36 @@ paypal
 paypal
   .PaymentFields({
     fundingSource: paypal.FUNDING.BANCONTACT,
-    style: {},
+    // style object is optional
+    style: {
+      // customize field attributes (optional)
+      variables: {
+        fontFamily: "'Helvetica Neue', Arial, sans-serif",
+        fontSizeBase: "0.9375rem",
+        fontSizeM: "0.93rem",
+        textColor: "#2c2e2f",
+        colorTextPlaceholder: "#2c2e2f",
+        colorBackground: "#fff",
+        colorDanger: "#d20000",
+        borderRadius: "0.2rem",
+        borderColor: "#dfe1e5",
+        borderWidth: "1px",
+        borderFocusColor: "black",
+        spacingUnit: "10px",
+      },
+      // set custom rules to apply to fields classes (optional)
+      rules: {
+        ".Input": {},
+        ".Input:hover": {},
+        ".Input:focus": {
+          color: 'blue',
+          boxShadow: '0px 2px 4px rgb(0 0 0 / 50%), 0px 1px 6px rgb(0 0 0 / 25%)',
+        },
+        ".Input:active": {},
+        ".Input--invalid": {},
+        ".Label": {},
+      },
+    },
     fields: {
       name: {
         value: ''
